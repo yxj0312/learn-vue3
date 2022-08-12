@@ -4,6 +4,10 @@
 import HelloWorld from './components/HelloWorld.vue'
 
 let message = $ref("Hello, World!")
+
+let doSomething = () => {
+  alert("doing it now")
+}
 </script>
 
 <template>
@@ -21,6 +25,7 @@ let message = $ref("Hello, World!")
   <p>
     <input type="text" v-model="message" />
   </p>
+    <button @click="doSomething">Click</button>
 </template>
 
 <style scoped>
