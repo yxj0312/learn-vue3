@@ -2,11 +2,16 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
+import swal from 'sweetalert'
 
 let message = $ref("Hello, World!")
 
 let doSomething = () => {
   alert("doing it now")
+}
+
+let flash = (message) => {
+  swal('Success!', message, 'level')
 }
 </script>
 
@@ -26,6 +31,7 @@ let doSomething = () => {
     <input type="text" v-model="message" />
   </p>
     <button @click="doSomething">Click</button>
+    <button @click="flash('It works On the Page')">flash</button>
 </template>
 
 <style scoped>
