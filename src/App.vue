@@ -1,17 +1,23 @@
-<script setup>
+<!-- <script setup> -->
+<script>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
-import swal from 'sweetalert'
+// import swal from 'sweetalert'
+import flash from './mixins/flash'
 
-let message = $ref("Hello, World!")
+// let message = $ref("Hello, World!")
 
-let doSomething = () => {
-  alert("doing it now")
-}
+// let doSomething = () => {
+//   alert("doing it now")
+// }
 
-let flash = (message) => {
-  swal('Success!', message, 'success')
+// let flash = (message) => {
+//   swal('Success!', message, 'success')
+// }
+
+export default {
+  mixins:[flash]
 }
 </script>
 
@@ -24,7 +30,7 @@ let flash = (message) => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
 
   <p>{{ message }}</p>
   <p>
