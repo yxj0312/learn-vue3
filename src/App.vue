@@ -11,7 +11,7 @@ let doSomething = () => {
 }
 
 let flash = (message) => {
-  swal('Success!', message, 'level')
+  swal('Success!', message, 'success')
 }
 </script>
 
