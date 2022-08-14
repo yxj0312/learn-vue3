@@ -5,6 +5,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 // import swal from 'sweetalert'
 import flash from './mixins/flash'
+import { useFlash } from './composables/useFlash';
 
 // let message = $ref("Hello, World!")
 
@@ -17,8 +18,15 @@ import flash from './mixins/flash'
 // }
 
 export default {
-  mixins:[flash]
+  // mixins:[flash]
+
+  setup() {
+    let { flash } = useFlash()
+
+    return { flash }
+  }
 }
+
 </script>
 
 <template>
