@@ -20,6 +20,7 @@ let { flash } = useFlash()
   </p>
     <button @click="doSomething">Click</button>
     <button @click="flash('Yay!','It works On the Page', 'info')">flash</button>
+    <button @click="flash('Test!','It works On the Page')">flash2</button>
 </template>
 
 <style scoped>
