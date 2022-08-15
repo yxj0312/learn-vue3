@@ -19,7 +19,7 @@ let { flash } = useFlash()
     <input type="text" v-model="message" />
   </p>
     <button @click="doSomething">Click</button>
-    <button @click="flash('It works On the Page')">flash</button>
+    <button @click="flash('Yay!','It works On the Page', 'info')">flash</button>
 </template>
 
 <style scoped>
