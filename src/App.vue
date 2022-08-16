@@ -5,22 +5,18 @@ let { flash } = useFlash()
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-
   <p>{{ message }}</p>
   <p>
     <input type="text" v-model="message" />
   </p>
-    <button @click="doSomething">Click</button>
-    <button @click="flash('Yay!','It works On the Page', 'info')">flash</button>
-    <button @click="flash('Test!','It works On the Page')">flash2</button>
+
+  <button @click="doSomething">Click</button>
+  <button @click="flash('Yay!','It works On the Page', 'info')">flash</button>
+  <button @click="flash('Test!','It works On the Page')">flash2</button>
+
+  <p>
+    What is your favorite food? <input type="text" v-model="food" @input="write" />
+  </p>
 </template>
 
 <style scoped>
