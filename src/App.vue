@@ -1,7 +1,14 @@
 <script setup>
 
 import { useFlash } from './composables/useFlash';
+import { ref } from "vue"
+
 let { flash } = useFlash()
+let food = ref('')
+
+function write() {
+  localStorage.setItem('food', food.value)
+}
 </script>
 
 <template>
