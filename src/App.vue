@@ -5,6 +5,7 @@ import { ref } from "vue"
 
 let { flash } = useFlash()
 let food = ref('')
+let message = ref('')
 
 function write() {
   localStorage.setItem('food', food.value)
