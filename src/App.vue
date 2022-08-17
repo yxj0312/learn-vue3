@@ -1,12 +1,16 @@
 <script setup>
 
 import { useFlash } from './composables/useFlash';
-import { ref } from "vue"
+import { ref, watch } from "vue"
 
 let { flash } = useFlash()
 let food = ref(localStorage.getItem('food'))
 let age = ref(localStorage.getItem('age'))
 let message = ref('')
+
+watch(food, (val) => {
+  write('food', val)
+})
 
 function write(key, val) {
   localStorage.setItem(key, val)
