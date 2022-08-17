@@ -4,7 +4,7 @@ import { useFlash } from './composables/useFlash';
 import { ref } from "vue"
 
 let { flash } = useFlash()
-let food = ref('')
+let food = ref(localStorage.getItem('food'))
 let message = ref('')
 
 function write() {
