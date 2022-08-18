@@ -8,13 +8,7 @@ let food = ref(localStorage.getItem('food'))
 let age = ref(localStorage.getItem('age'))
 let message = ref('')
 
-watch(food, (val) => {
-  write('food', val)
-})
 
-function write(key, val) {
-  localStorage.setItem(key, val)
-}
 </script>
 
 <template>
