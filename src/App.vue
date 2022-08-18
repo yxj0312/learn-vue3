@@ -2,10 +2,12 @@
 
 import { useFlash } from './composables/useFlash';
 import { ref, watch } from "vue"
+import {useStorage } from './composables/useStorage'
 
 let { flash } = useFlash()
-let food = ref(localStorage.getItem('food'))
-let age = ref(localStorage.getItem('age'))
+
+let food = useStorage('food')
+// let age = useStorage('age')
 let message = ref('')
 
 
@@ -22,12 +24,12 @@ let message = ref('')
   <button @click="flash('Test!','It works On the Page')">flash2</button>
 
   <p>
-    What is your favorite food? <input type="text" v-model="food" @input="write('food', food)" />
+    What is your favorite food? <input type="text" v-model="food"/>
   </p>
 
-  <p>
-    How old are you? <input type="text" v-model="age" @input="write('age', age)" />
-  </p>
+  <!-- <p>
+    How old are you? <input type="text" v-model="age" />
+  </p> -->
 </template>
 
 <style scoped>

@@ -1,15 +1,22 @@
 import {ref,watch} from "vue"
 export function useStorage(key) {
+    console.log('12312')
+    console.log(key)
     let storedVal = localStorage.getItem(key)
     
+
     let val = ref(storedVal)
 
     watch(val, ()=>{
-        write
+        write();
     })
 
     function write() {
-        localStorage.setItem(key, val.value)
+        if (val.value === '') {
+            localStorage.setItem(key)
+        } else {
+            localStorage.setItem(key, val.value)
+        }        
     }
     return val
 }
