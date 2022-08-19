@@ -6,7 +6,7 @@ import {useStorage } from './composables/useStorage'
 
 let { flash } = useFlash()
 
-let food = useStorage('food')
+let food = useStorage('food','salad')
 // let age = useStorage('age')
 let message = ref('')
 
