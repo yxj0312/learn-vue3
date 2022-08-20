@@ -10,7 +10,11 @@ let food = useStorage('food')
 let age = useStorage('age')
 let message = ref('')
 
+let obj = useStorage('obj',{ one: 'one'})
 
+setTimeout(() => {
+  obj.value.one = 'changed'
+}, 3000);
 </script>
 
 <template>
