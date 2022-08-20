@@ -1,6 +1,6 @@
 import {ref,watch} from "vue"
-export function useStorage(key,val = null) {
 
+export function useStorage(key, val = null) {
     let storedVal = localStorage.getItem(key)
 
     if (storedVal) {
@@ -18,7 +18,7 @@ export function useStorage(key,val = null) {
 
     function write() {
         if (val.value === null || val.value === '') {
-            localStorage.setItem(key)
+            localStorage.removeItem(key)
         } else {
             localStorage.setItem(key, val.value)
         }        

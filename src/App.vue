@@ -6,8 +6,8 @@ import {useStorage } from './composables/useStorage'
 
 let { flash } = useFlash()
 
-let food = useStorage('food','salad')
-// let age = useStorage('age')
+let food = useStorage('food')
+let age = useStorage('age')
 let message = ref('')
 
 
@@ -27,9 +27,9 @@ let message = ref('')
     What is your favorite food? <input type="text" v-model="food"/>
   </p>
 
-  <!-- <p>
+  <p>
     How old are you? <input type="text" v-model="age" />
-  </p> -->
+  </p>
 </template>
 
 <style scoped>
