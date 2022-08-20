@@ -1,9 +1,8 @@
 import {ref,watch} from "vue"
-export function useStorage(key) {
-    console.log('12312')
-    console.log(key)
+export function useStorage(key,val) {
+
     let storedVal = localStorage.getItem(key)
-    
+
     if (storedVal) {
         val = ref(storedVal)
     } else {
@@ -11,7 +10,7 @@ export function useStorage(key) {
         write()
     }
 
-    let val = ref(storedVal)
+   
 
     watch(val, ()=>{
         write();
