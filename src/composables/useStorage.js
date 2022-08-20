@@ -8,6 +8,7 @@ export function useStorage(key) {
         val = ref(storedVal)
     } else {
         val = ref(val)
+        write()
     }
 
     let val = ref(storedVal)
