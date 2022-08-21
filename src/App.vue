@@ -3,6 +3,7 @@
 import { useFlash } from './composables/useFlash';
 import { ref, watch } from "vue"
 import {useStorage } from './composables/useStorage'
+import HomeView from './views/HomeView.vue';
 
 let { flash } = useFlash()
 
@@ -34,6 +35,8 @@ let message = ref('')
   <p>
     How old are you? <input type="text" v-model="age" />
   </p>
+
+  <HomeView></HomeView>
 </template>
 
 <style scoped>
