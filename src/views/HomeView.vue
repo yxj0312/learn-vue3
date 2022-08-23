@@ -4,28 +4,29 @@
     let textarea = ref('null');
 
     onMounted(()=>{
-        console.log(textarea.value)
+        textarea.value.addEventListener("keydown", (e) => {
+            let t = textarea.value
+            if (e.keyCode === 9) {
+                // tab was pressed
+                // get caret position/selection
+                let val = t.value,
+                start = t.selectionStart,
+                end = t.selectionEnd;
+
+                // set textarea value to: text before cret + tab +text after caret
+                t.value = val.substring(0, start) + "\t" + val.substring(end)
+
+                // put caret at right position again
+                t.selectionStart = t.selectionEnd = start + 1
+
+                e.preventDefault();
+            }
+        })
     })
 
-    console.log(textarea.value)
+    
 
-    // textarea.addEventListener("keydown", (e) => {
-    //     if (e.keyCode === 9) {
-    //         // tab was pressed
-    //         // get caret position/selection
-    //         let val = textarea.value,
-    //         start = textarea.selectionStart,
-    //         end = textarea.selectionEnd;
-
-    //         // set textarea value to: text before cret + tab +text after caret
-    //         textarea.value = val.substring(0, start) + "\t" + val.substring(end)
-
-    //         // put caret at right position again
-    //         textarea.selectionStart = textarea.selectionEnd = start + 1
-
-    //         e.preventDefault();
-    //     }
-    // })
+    
 </script>
 <template>
     <main>
