@@ -6,21 +6,20 @@
 
     function onKeyDown(e) {
         let t = textarea.value
-        if (e.keyCode === 9) {
-            // tab was pressed
-            // get caret position/selection
-            let val = t.value,
-            start = t.selectionStart,
-            end = t.selectionEnd;
+        
+        // tab was pressed
+        // get caret position/selection
+        let val = t.value,
+        start = t.selectionStart,
+        end = t.selectionEnd;
 
-            // set textarea value to: text before cret + tab +text after caret
-            t.value = val.substring(0, start) + "\t" + val.substring(end)
+        // set textarea value to: text before cret + tab +text after caret
+        t.value = val.substring(0, start) + "\t" + val.substring(end)
 
-            // put caret at right position again
-            t.selectionStart = t.selectionEnd = start + 1
+        // put caret at right position again
+        t.selectionStart = t.selectionEnd = start + 1
 
-            e.preventDefault();
-        }
+        e.preventDefault();
     }
 
     
@@ -28,7 +27,7 @@
 <template>
     <main>
         <form>
-            <textarea ref="textarea" @keydown="onKeyDown" style="width: 100%; height: 300px">Hi there</textarea>
+            <textarea ref="textarea" @keydown.tab="onKeyDown" style="width: 100%; height: 300px">Hi there</textarea>
         </form>
     </main>
 </template>
