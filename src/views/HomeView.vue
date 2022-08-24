@@ -5,24 +5,22 @@
 
 
     function onKeyDown(e) {
-        
-            let t = textarea.value
-            if (e.keyCode === 9) {
-                // tab was pressed
-                // get caret position/selection
-                let val = t.value,
-                start = t.selectionStart,
-                end = t.selectionEnd;
+        let t = textarea.value
+        if (e.keyCode === 9) {
+            // tab was pressed
+            // get caret position/selection
+            let val = t.value,
+            start = t.selectionStart,
+            end = t.selectionEnd;
 
-                // set textarea value to: text before cret + tab +text after caret
-                t.value = val.substring(0, start) + "\t" + val.substring(end)
+            // set textarea value to: text before cret + tab +text after caret
+            t.value = val.substring(0, start) + "\t" + val.substring(end)
 
-                // put caret at right position again
-                t.selectionStart = t.selectionEnd = start + 1
+            // put caret at right position again
+            t.selectionStart = t.selectionEnd = start + 1
 
-                e.preventDefault();
-            }
-        
+            e.preventDefault();
+        }
     }
 
     
