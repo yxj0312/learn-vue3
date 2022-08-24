@@ -3,8 +3,9 @@
 
     let textarea = ref('null');
 
-    onMounted(()=>{
-        textarea.value.addEventListener("keydown", (e) => {
+
+    function onKeyDown(e) {
+        
             let t = textarea.value
             if (e.keyCode === 9) {
                 // tab was pressed
@@ -21,17 +22,15 @@
 
                 e.preventDefault();
             }
-        })
-    })
-
-    
+        
+    }
 
     
 </script>
 <template>
     <main>
         <form>
-            <textarea ref="textarea" style="width: 100%; height: 300px">Hi there</textarea>
+            <textarea ref="textarea" @keydown="onKeyDown" style="width: 100%; height: 300px">Hi there</textarea>
         </form>
     </main>
 </template>
