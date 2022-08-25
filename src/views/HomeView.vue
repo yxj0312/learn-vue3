@@ -4,7 +4,7 @@
     let textarea = ref('null');
 
 
-    function onKeyDown(e) {
+    function onTabPress(e) {
         let t = textarea.value
         
         // tab was pressed
@@ -27,7 +27,7 @@
 <template>
     <main>
         <form>
-            <textarea ref="textarea" @keydown.tab="onKeyDown" style="width: 100%; height: 300px">Hi there</textarea>
+            <textarea ref="textarea" @keydown.tab="onTabPress" style="width: 100%; height: 300px">Hi there</textarea>
         </form>
     </main>
 </template>
