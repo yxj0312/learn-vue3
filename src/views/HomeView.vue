@@ -5,19 +5,19 @@
 
 
     function onTabPress(e) {
-        let t = textarea.value
+        let textarea = e.target
         
         // tab was pressed
         // get caret position/selection
-        let val = t.value,
-        start = t.selectionStart,
-        end = t.selectionEnd;
+        let val = textarea.value,
+        start = textarea.selectionStart,
+        end = textarea.selectionEnd;
 
-        // set textarea value to: text before cret + tab +text after caret
-        t.value = val.substring(0, start) + "\t" + val.substring(end)
+        // set textarea value to: text before caret + tab +text after caret
+        textarea.value = val.substring(0, start) + "\t" + val.substring(end)
 
         // put caret at right position again
-        t.selectionStart = t.selectionEnd = start + 1
+        textarea.selectionStart = textarea.selectionEnd = start + 1
     }
 
     
@@ -25,7 +25,7 @@
 <template>
     <main>
         <form>
-            <textarea ref="textarea" @keydown.tab.prevent="onTabPress" style="width: 100%; height: 300px">Hi there</textarea>
+            <textarea @keydown.tab.prevent="onTabPress" style="width: 100%; height: 300px">Hi there</textarea>
         </form>
     </main>
 </template>
